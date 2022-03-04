@@ -929,10 +929,7 @@ def test_bedtools_slop():
 
 @skip_if_not_modified
 def test_bgzip():
-    run(
-        "bio/bgzip",
-        ["snakemake", "--cores", "1", "test.vcf.gz", "--use-conda", "-F"]
-    )
+    run("bio/bgzip", ["snakemake", "--cores", "1", "test.vcf.gz", "--use-conda", "-F"])
 
 
 @skip_if_not_modified
@@ -2860,7 +2857,10 @@ def test_delly():
 
 @skip_if_not_modified
 def test_manta():
-    run("bio/manta", ["snakemake", "--cores", "2", "results/out.bcf", "--use-conda", "-F"])
+    run(
+        "bio/manta",
+        ["snakemake", "--cores", "2", "results/out.bcf", "--use-conda", "-F"],
+    )
 
 
 @skip_if_not_modified
